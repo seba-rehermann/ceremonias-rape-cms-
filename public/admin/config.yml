@@ -1,0 +1,114 @@
+backend:
+  name: git-gateway
+  branch: main # Rama principal de GitHub
+
+# Configura donde están los archivos de media
+media_folder: "public/images"
+public_folder: "/images"
+
+# Configuración de contenido
+collections:
+  # Configuración general del sitio
+  - name: "config"
+    label: "Configuración del Sitio"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: "general"
+        label: "Configuración General"
+        file: "content/config.yml"
+        description: "Configuración general del sitio"
+        fields:
+          - { label: "Título del Sitio", name: "site_title", widget: "string" }
+          - { label: "Descripción", name: "site_description", widget: "text" }
+          - { label: "Email de Contacto", name: "contact_email", widget: "string" }
+          - { label: "Teléfono", name: "contact_phone", widget: "string" }
+          - { label: "Dirección", name: "contact_address", widget: "text" }
+
+  # Productos de Rapé
+  - name: "productos"
+    label: "Productos"
+    folder: "content/productos"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nombre del Producto", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string", hint: "URL amigable (ej: rape-huni-kuin)" }
+      - { label: "Precio", name: "price", widget: "number", value_type: "float" }
+      - { label: "Disponible", name: "available", widget: "boolean", default: true }
+      - { label: "Imagen Principal", name: "image", widget: "image", required: false }
+      - { label: "Galería de Imágenes", name: "gallery", widget: "list", field: { label: "Imagen", name: "image", widget: "image" }, required: false }
+      - { label: "Descripción Corta", name: "excerpt", widget: "text" }
+      - { label: "Descripción Completa", name: "body", widget: "markdown" }
+      - { label: "Tribu de Origen", name: "tribe", widget: "string", required: false }
+      - { label: "Región", name: "region", widget: "string", required: false }
+      - { label: "Ingredientes", name: "ingredients", widget: "list", field: { label: "Ingrediente", name: "ingredient", widget: "string" } }
+      - { label: "Usos Tradicionales", name: "traditional_uses", widget: "text", required: false }
+      - { label: "Peso (gramos)", name: "weight", widget: "number", required: false }
+      - { label: "Fecha de Publicación", name: "date", widget: "datetime" }
+
+  # Ceremonias
+  - name: "ceremonias"
+    label: "Ceremonias"
+    folder: "content/ceremonias"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Título de la Ceremonia", name: "title", widget: "string" }
+      - { label: "Fecha y Hora", name: "date", widget: "datetime" }
+      - { label: "Duración (horas)", name: "duration", widget: "number", default: 3 }
+      - { label: "Ubicación", name: "location", widget: "string" }
+      - { label: "Precio", name: "price", widget: "number", value_type: "float" }
+      - { label: "Cupos Disponibles", name: "capacity", widget: "number" }
+      - { label: "Está Activa", name: "active", widget: "boolean", default: true }
+      - { label: "Imagen", name: "image", widget: "image", required: false }
+      - { label: "Descripción", name: "body", widget: "markdown" }
+      - { label: "Qué Incluye", name: "includes", widget: "list", field: { label: "Item", name: "item", widget: "string" } }
+      - { label: "Qué Llevar", name: "bring", widget: "list", field: { label: "Item", name: "item", widget: "string" }, required: false }
+      - { label: "Facilitador", name: "facilitator", widget: "string", required: false }
+      - { label: "Nivel", name: "level", widget: "select", options: ["Principiante", "Intermedio", "Avanzado", "Todos los niveles"] }
+
+  # Páginas del sitio
+  - name: "pages"
+    label: "Páginas"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: "home"
+        label: "Página de Inicio"
+        file: "content/pages/home.yml"
+        fields:
+          - { label: "Título Principal", name: "hero_title", widget: "string" }
+          - { label: "Subtítulo", name: "hero_subtitle", widget: "text" }
+          - { label: "Imagen de Fondo", name: "hero_image", widget: "image", required: false }
+          - { label: "Características", name: "features", widget: "list", fields: [
+              { label: "Icono", name: "icon", widget: "string", hint: "Emoji o nombre del icono" },
+              { label: "Título", name: "title", widget: "string" },
+              { label: "Descripción", name: "description", widget: "text" }
+            ]}
+          
+      - name: "about"
+        label: "Acerca de"
+        file: "content/pages/about.yml"
+        fields:
+          - { label: "Título", name: "title", widget: "string" }
+          - { label: "Contenido", name: "body", widget: "markdown" }
+          - { label: "Imagen", name: "image", widget: "image", required: false }
+
+  # Blog/Noticias
+  - name: "blog"
+    label: "Blog"
+    folder: "content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Fecha de Publicación", name: "date", widget: "datetime" }
+      - { label: "Autor", name: "author", widget: "string", default: "Ceremonias de Rapé" }
+      - { label: "Imagen Destacada", name: "featured_image", widget: "image", required: false }
+      - { label: "Extracto", name: "excerpt", widget: "text" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "list", field: { label: "Tag", name: "tag", widget: "string" }, required: false }
+      - { label: "Publicado", name: "published", widget: "boolean", default: true }
