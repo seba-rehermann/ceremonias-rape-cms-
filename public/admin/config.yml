@@ -1,6 +1,6 @@
 backend:
-  name: test-repo
-  # Configuración temporal para testing
+  name: git-gateway
+  branch: main
 
 # Configura donde están los archivos de media
 media_folder: "public/images"
