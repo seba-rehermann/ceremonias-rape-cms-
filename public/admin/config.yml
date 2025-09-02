@@ -1,3 +1,8 @@
+# Backend con proxy local para archivos reales
+backend:
+  name: git-gateway
+  branch: main
+
 # Configuración para modo local - sin autenticación
 local_backend: true
 
