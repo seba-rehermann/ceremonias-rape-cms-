@@ -6,7 +6,9 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "cms": "decap-server",
+    "dev:full": "concurrently \"npm run dev\" \"npm run cms\""
   },
   "dependencies": {
     "@types/node-cron": "^3.0.11",
@@ -25,7 +27,9 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "concurrently": "^9.2.1",
     "decap-cms-app": "^3.8.3",
+    "decap-server": "^3.3.1",
     "eslint": "^9",
     "eslint-config-next": "15.5.2",
     "netlify-cli": "^23.5.0",
