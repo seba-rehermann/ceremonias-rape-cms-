@@ -1,0 +1,7 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <rect width="128" height="128" fill="#8B4513" rx="12.8"/>
+  <g transform="translate(25.6, 25.6)">
+    <path d="M38.4 12.8 Q64 0 89.6 12.8 Q102.4 25.6 96 51.2 L64 76.8 L32 51.2 Q25.6 25.6 38.4 12.8 Z" fill="#FED7AA" stroke="#F59E0B" stroke-width="1"/>
+    <line x1="64" y1="76.8" x2="64" y2="102.4" stroke="#F59E0B" stroke-width="2"/>
+  </g>
+</svg>

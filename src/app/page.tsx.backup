@@ -1,0 +1,173 @@
+import Layout from '@/components/Layout';
+import Link from 'next/link';
+import { Calendar, ShoppingBag, MessageCircle, Leaf, Star, Users } from 'lucide-react';
+
+export default function Home() {
+  return (
+    <Layout>
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-b from-amber-100 to-amber-50 py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <div className="flex justify-center mb-6">
+              <Leaf className="h-16 w-16 text-amber-800" />
+            </div>
+            <h1 className="text-4xl md:text-6xl font-bold text-amber-900 mb-6">
+              Ceremonias de Rapé
+            </h1>
+            <p className="text-xl text-amber-800 mb-8 max-w-3xl mx-auto">
+              Conecta con la medicina ancestral a través de productos auténticos de rapé 
+              y ceremonias sagradas. Un camino hacia el bienestar espiritual.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/productos"
+                className="bg-amber-800 text-white px-8 py-3 rounded-full font-semibold hover:bg-amber-900 transition-colors"
+              >
+                Ver Productos
+              </Link>
+              <Link
+                href="/ceremonias"
+                className="border-2 border-amber-800 text-amber-800 px-8 py-3 rounded-full font-semibold hover:bg-amber-800 hover:text-white transition-colors"
+              >
+                Próximas Ceremonias
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-amber-900 mb-4">
+              ¿Qué ofrecemos?
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Descubre todo lo que tenemos preparado para tu journey espiritual
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Productos */}
+            <div className="text-center p-6 rounded-lg bg-amber-50 hover:bg-amber-100 transition-colors">
+              <ShoppingBag className="h-12 w-12 text-amber-800 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold text-amber-900 mb-3">Productos Auténticos</h3>
+              <p className="text-gray-600 mb-4">
+                Rapé de alta calidad, elaborado con técnicas ancestrales y ingredientes puros.
+              </p>
+              <Link
+                href="/productos"
+                className="text-amber-800 font-medium hover:text-amber-900 transition-colors"
+              >
+                Explorar productos →
+              </Link>
+            </div>
+
+            {/* Ceremonias */}
+            <div className="text-center p-6 rounded-lg bg-amber-50 hover:bg-amber-100 transition-colors">
+              <Calendar className="h-12 w-12 text-amber-800 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold text-amber-900 mb-3">Ceremonias Sagradas</h3>
+              <p className="text-gray-600 mb-4">
+                Participa en ceremonias grupales guiadas con amor y respeto hacia la medicina.
+              </p>
+              <Link
+                href="/ceremonias"
+                className="text-amber-800 font-medium hover:text-amber-900 transition-colors"
+              >
+                Ver calendario →
+              </Link>
+            </div>
+
+            {/* Contacto */}
+            <div className="text-center p-6 rounded-lg bg-amber-50 hover:bg-amber-100 transition-colors">
+              <MessageCircle className="h-12 w-12 text-amber-800 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold text-amber-900 mb-3">Consultas Personalizadas</h3>
+              <p className="text-gray-600 mb-4">
+                Resuelve tus dudas y obtén recomendaciones personalizadas sobre los productos.
+              </p>
+              <Link
+                href="/contacto"
+                className="text-amber-800 font-medium hover:text-amber-900 transition-colors"
+              >
+                Contactar →
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-20 bg-amber-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-amber-900 mb-4">
+              Experiencias de nuestra comunidad
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Testimonio 1 */}
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <div className="flex items-center mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                ))}
+              </div>
+              <p className="text-gray-600 mb-4">
+                "Una experiencia transformadora. El rapé es de excelente calidad y las ceremonias son profundamente sanadores."
+              </p>
+              <div className="font-semibold text-amber-900">- María G.</div>
+            </div>
+
+            {/* Testimonio 2 */}
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <div className="flex items-center mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                ))}
+              </div>
+              <p className="text-gray-600 mb-4">
+                "Productos auténticos y un acompañamiento espiritual excepcional. Totalmente recomendado."
+              </p>
+              <div className="font-semibold text-amber-900">- Carlos R.</div>
+            </div>
+
+            {/* Testimonio 3 */}
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <div className="flex items-center mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                ))}
+              </div>
+              <p className="text-gray-600 mb-4">
+                "Las ceremonias me han ayudado enormemente en mi proceso de sanación interior."
+              </p>
+              <div className="font-semibold text-amber-900">- Ana L.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-amber-800 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <Users className="h-16 w-16 text-amber-200 mx-auto mb-6" />
+          <h2 className="text-3xl font-bold mb-4">
+            Únete a nuestra comunidad
+          </h2>
+          <p className="text-xl text-amber-100 mb-8 max-w-2xl mx-auto">
+            Forma parte de una comunidad que honra y respeta la medicina ancestral del rapé.
+          </p>
+          <Link
+            href="/contacto"
+            className="bg-white text-amber-800 px-8 py-3 rounded-full font-semibold hover:bg-amber-100 transition-colors inline-block"
+          >
+            Comenzar mi journey
+          </Link>
+        </div>
+      </section>
+    </Layout>
+  );
+}
