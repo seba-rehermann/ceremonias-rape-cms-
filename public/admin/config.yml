@@ -1,6 +1,6 @@
 backend:
-  name: git-gateway
-  branch: main # Rama principal de GitHub
+  name: test-repo
+  # Configuración temporal para testing
 
 # Configura donde están los archivos de media
 media_folder: "public/images"
