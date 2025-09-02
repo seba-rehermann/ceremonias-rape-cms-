@@ -17,14 +17,14 @@ cd /home/seba/rape-ceremonias-web
 
 | Función | URL | Descripción |
 |---------|-----|-------------|
-| **Administrador** | http://localhost:3001/admin | Panel para editar contenido |
-| **Sitio Web** | http://localhost:3001 | Página pública |
+| **Administrador** | http://localhost:3000/admin/index.html | Panel para editar contenido |
+| **Sitio Web** | http://localhost:3000 | Página pública |
 | **Repositorio** | https://github.com/seba-rehermann/ceremonias-rape-cms- | Código en GitHub |
 
 ## 📝 **Cómo Administrar Contenido**
 
 ### 1. **Acceder al Administrador**
-- Ve a: http://localhost:3001/admin
+- Ve a: http://localhost:3000/admin/index.html
 - **No necesita contraseña** (modo local)
 
 ### 2. **Secciones Disponibles**
@@ -80,7 +80,7 @@ cd /home/seba/rape-ceremonias-web
 ### El sitio no abre
 1. Ejecutar el **lanzador de iniciar**
 2. Esperar 10-15 segundos
-3. Ir a http://localhost:3001/admin
+3. Ir a http://localhost:3000/admin/index.html
 
 ### Error de puerto ocupado
 1. Ejecutar el **lanzador de detener**
@@ -127,9 +127,9 @@ Cuando quieras que tu sitio sea público:
 ## 📋 **Flujo de Trabajo Diario**
 
 1. **Iniciar**: Doble clic en `🌿 Iniciar Ceremonias Rapé`
-2. **Editar**: Ir a http://localhost:3001/admin
+2. **Editar**: Ir a http://localhost:3000/admin/index.html
 3. **Agregar/Editar**: Productos, ceremonias, blog
-4. **Revisar**: Ver cambios en http://localhost:3001
+4. **Revisar**: Ver cambios en http://localhost:3000
 5. **Guardar**: Hacer commit en GitHub (opcional)
 6. **Cerrar**: Doble clic en `🛑 Detener Ceremonias Rapé`
 

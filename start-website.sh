@@ -33,8 +33,8 @@ sleep 5
 
 echo "✅ ¡Sitio web iniciado exitosamente!"
 echo ""
-echo "🌐 Sitio web: http://localhost:3001"
-echo "📝 Administrador: http://localhost:3001/admin"
+echo "🌐 Sitio web: http://localhost:3000"
+echo "📝 Administrador: http://localhost:3000/admin/index.html"
 echo ""
 echo "📋 Para ver los logs:"
 echo "   Website: tail -f website.log"
@@ -43,4 +43,4 @@ echo ""
 echo "🛑 Para detener: ejecuta 'stop-website.sh'"
 
 # Abrir navegador automáticamente
-xdg-open "http://localhost:3001/admin" 2>/dev/null || firefox "http://localhost:3001/admin" 2>/dev/null || google-chrome "http://localhost:3001/admin" 2>/dev/null || true
+xdg-open "http://localhost:3000/admin/index.html" 2>/dev/null || firefox "http://localhost:3000/admin/index.html" 2>/dev/null || google-chrome "http://localhost:3000/admin/index.html" 2>/dev/null || true

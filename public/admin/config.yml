@@ -3,8 +3,8 @@ backend:
   name: git-gateway
   branch: main
 
-# Configuración para modo local - comentar en producción
-# local_backend: true
+# Configuración para modo local - activar para desarrollo
+local_backend: true
 
 # Configura donde están los archivos de media
 media_folder: "public/images"
