@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: seba-rehermann/ceremonias-rape-cms-
   branch: main
 
 # Configura donde están los archivos de media
