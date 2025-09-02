@@ -1,36 +1,128 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ceremonias de Rapé - Sitio Web
 
-## Getting Started
+Sitio web para ceremonias de rapé con CMS integrado para la gestión de contenido.
 
-First, run the development server:
+## 🚀 Desarrollo Local
+
+### Requisitos
+- Node.js (versión 18 o superior)
+- npm
+
+### Instalación
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Clonar el repositorio
+git clone https://github.com/seba-rehermann/ceremonias-rape-cms-.git
+cd ceremonias-rape-cms-
+
+# Instalar dependencias
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Desarrollo Local
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Para trabajar en el sitio completo con CMS:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# Ejecutar sitio web + CMS (RECOMENDADO)
+npm run dev:full
+```
 
-## Learn More
+Esto iniciará:
+- **Sitio web**: http://localhost:3001
+- **CMS**: http://localhost:3001/admin/
+- **Servidor CMS**: http://localhost:8081 (proxy para archivos locales)
 
-To learn more about Next.js, take a look at the following resources:
+### Comandos Alternativos
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+# Solo el sitio web
+npm run dev
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Solo el CMS server
+npm run cms
 
-## Deploy on Vercel
+# Build para producción
+npm run build
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📝 Gestión de Contenido
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Acceso al CMS
+1. Ve a http://localhost:3001/admin/
+2. **No requiere autenticación en desarrollo local**
+3. Podrás ver y editar:
+   - **Productos**: Diferentes tipos de rapé
+   - **Ceremonias**: Eventos programados
+   - **Páginas**: Contenido del sitio
+   - **Blog**: Artículos y noticias
+   - **Configuración**: Datos generales del sitio
+
+### Estructura de Archivos de Contenido
+
+```
+content/
+├── productos/          # Archivos .md de productos de rapé
+├── ceremonias/         # Archivos .md de ceremonias
+├── blog/              # Artículos del blog
+├── pages/             # Páginas del sitio (.yml)
+└── config.yml         # Configuración general
+```
+
+## 🌐 Deployment
+
+### Para Netlify (Cuando esté listo)
+1. El sitio ya tiene configuración para Netlify (`netlify.toml`)
+2. Para deployment con autenticación GitHub:
+   - Crear OAuth App en GitHub
+   - Configurar en Netlify
+   - Cambiar `local_backend: true` a `false` en `public/admin/config.yml`
+
+## 🛠️ Estructura del Proyecto
+
+```
+├── app/                # Páginas Next.js (App Router)
+├── components/         # Componentes React reutilizables
+├── content/           # Archivos de contenido (markdown/yaml)
+├── public/
+│   ├── admin/         # Configuración del CMS
+│   └── images/        # Imágenes públicas
+├── lib/               # Utilidades y configuraciones
+└── styles/            # Estilos globales
+```
+
+## 🧘‍♀️ Características
+
+- **CMS Visual**: Interfaz amigable para gestionar contenido
+- **Responsive**: Optimizado para móviles y desktop
+- **SEO**: Optimizado para motores de búsqueda
+- **PWA Ready**: Preparado para Progressive Web App
+- **Performance**: Optimizado con Next.js 15 y Turbopack
+
+## 📋 Lista de Tareas
+
+- [x] Configuración inicial del proyecto
+- [x] Integración de Decap CMS
+- [x] Configuración para desarrollo local
+- [ ] Diseño y estilos del sitio
+- [ ] Funcionalidades específicas
+- [ ] Optimización y testing
+- [ ] Deployment a Netlify
+
+## 🆘 Problemas Comunes
+
+### El CMS no muestra contenido
+- Verificar que ambos servidores estén corriendo
+- Verificar que los archivos estén en la carpeta `content/`
+
+### Puerto en uso
+- Cambiar puertos en caso de conflicto
+- Usar `pkill -f "next"` y `pkill -f "decap"` para limpiar procesos
+
+## 🤝 Contribuir
+
+1. Fork del proyecto
+2. Crear branch para tu feature
+3. Commit de cambios
+4. Push al branch
+5. Abrir Pull Request
